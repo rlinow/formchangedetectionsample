@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form>
+        <app-user-personal-info-form [form]="mainForm.controls['userInfo']" #userInfoForm>
+        </app-user-personal-info-form>
+        <app-company-info-form [form]="mainForm.controls['companyInfo']" #companyInfoForm>
+        </app-company-info-form>
+      </form>
+      <br />
+      <button (click)="save()" kendoButton>Save</button>
+    </div>
+  </div>
+</div>
+<kendo-dialog title="Result" *ngIf="!!resultDialogMessage" (close)="resultDialogMessage = null;">
+  <p>{{ resultDialogMessage }}</p>
+</kendo-dialog>
